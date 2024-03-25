@@ -1,0 +1,168 @@
+/* Importing the 'Poppins' font from Google Fonts for use throughout the web page */
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+/* Animation keyframes for the logo, gradually changing its width and opacity */
+@keyframes logoAnimation {
+    from {
+        width: 25px;
+        opacity: 0;
+    }
+
+    to {
+        width: 475px;
+        opacity: 1;
+    }
+}
+
+/* Applying the logo animation, setting its duration, fill mode, and iteration count */
+#logo {
+    animation: logoAnimation 5s forwards 1;
+}
+
+/* Setting the body's font, background image and background color */
+body {
+    font-family: 'Poppins', serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+}
+
+/* Styling for the header */
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Styling navigation links */
+.nav_links {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensures visited links use the default visited link color */
+.nav_item a:link,
+.nav_item a:visited {
+    color: -webkit-link;
+}
+
+/* Styling for card headers */
+.card>header {
+    background-color: #288088;
+    border: solid 2px #45ADAD;
+    padding: 20px 0px 20px 0px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    width: 100%;
+}
+
+/* Base styling for cards, with rounded corners */
+.card {
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    flex-basis: 450px;
+}
+
+/* Styling gallery images */
+.pricing {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Styling the gallery for responsiveness and alignment */
+.gallery img {
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+/* Media query for screens wider than 900px, adjusting layout for header, navigation links, pricing, and card components */
+@media screen and (min-width: 900px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .pricing {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .card {
+        flex-direction: row;
+        flex-basis: 275px;
+    }
+
+    body>header {
+        position: sticky;
+        top: 0;
+    }
+
+}
+
+/* Media query for users who prefer reduced motion, disabling animations */
+@media screen and (prefers-reduced-motion: reduce) {
+    #logo {
+        animation: none;
+    }
+}
+
+/* Print-specific styles, adjusting fonts, removing background images, and modifying layout for printing */
+@media print and (orientation: portrait) {
+    body {
+        font-family: 'Arial', 'Helvetica';
+        background-image: none;
+    }
+
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        justify-content: space-between;
+    }
+
+    .pricing {
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+
+    .card {
+        border: solid 2px #45ADDD;
+        flex-basis: 325px;
+    }
+
+    #gallery {
+        display: none;
+    }
+
+    .gallery {
+        display: none;
+    }
+
+    .card ul li:nth-child(2)::after {
+        content: "\1F44D";
+    }
+}

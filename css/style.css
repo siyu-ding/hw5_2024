@@ -39,10 +39,10 @@ header {
     flex-direction: column;
 }
 
-/* Ensures visited links use the default visited link color */
+/* Styling the links so that they have the same color even after they have been visited */
 .nav_item a:link,
 .nav_item a:visited {
-    color: -webkit-link;
+    color: #0000EE;
 }
 
 /* Styling for card headers */
